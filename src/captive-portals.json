@@ -1,0 +1,39 @@
+{
+  "FreeWifi": {
+    "logo": "freewifi.png",
+    "auth": {
+      "url": "https://wifi.free.fr/Auth",
+      "formData": {
+        "login": {
+        },
+        "password": {
+          "type": "password"
+        }
+      },
+      "error": "<h2>ERREUR </h2>"
+    }
+  },
+  "Bouygues Telecom Wi-Fi": {
+    "logo": "bouygues.svg",
+    "auth": {
+      "url": "https://hotspotwifi.bouyguestelecom.fr/",
+      "formData": {
+        "username": {
+        },
+        "password": {
+          "type": "password"
+        },
+        "cgu": {
+          "value": "on"
+        },
+        "accept": {
+          "value": "Connexion"
+        },
+        "CPURL": {
+          "value": "https://www.google.com"
+        }
+      },
+      "error": "TODO"
+    }
+  }
+}
