@@ -1,16 +1,28 @@
 {
   "manifest_version": 2,
-  "name": "FreeWiFi Hotspot Helper",
-  "description": "",
+  "name": "My Hotspots",
+  "description": "Save all your hotspots credentials to make your life easier.",
   "version": "0.0.1",
   "minimum_chrome_version": "43",
 
   "icons": {
-    "16": "assets/icon_16.png",
-    "128": "assets/icon_128.png"
+    "16": "images/icon16.png",
+    "128": "images/icon128.png"
   },
-  "permissions": [ "networking.config"],
-    "background": {
-      "scripts": ["background.js"]
-    }
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon19.png",
+      "38": "images/icon38.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "networking.config",
+    "notifications",
+    "storage"
+  ],
+  "optional_permissions": [
+    "<all_urls>"
+  ],
+  "background": { "scripts": ["common.js", "background.js"] }
 }
