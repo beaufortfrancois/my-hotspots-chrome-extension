@@ -1,6 +1,5 @@
 {
   "FreeWifi": {
-    "logo": "freewifi.png",
     "auth": {
       "url": "https://wifi.free.fr/Auth",
       "formData": {
@@ -14,7 +13,6 @@
     }
   },
   "Bouygues Telecom Wi-Fi": {
-    "logo": "bouygues.svg",
     "auth": {
       "url": "https://hotspotwifi.bouyguestelecom.fr/",
       "formData": {

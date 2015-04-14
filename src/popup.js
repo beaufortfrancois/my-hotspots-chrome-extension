@@ -12,7 +12,7 @@ xhr.onload = function() {
   
       // Add logo first.
       var img = document.createElement('img');
-      img.src = chrome.runtime.getURL('/images/portals/' + captivePortal.logo);
+      img.src = chrome.runtime.getURL('/images/portals/' + captivePortalKey + '.png');
       row.appendChild(img);
   
       // Add form input fields.
