@@ -39,9 +39,12 @@ xhr.onload = function() {
       checkbox.name = ACTIVE_KEY;
       checkbox.dataset.captivePortalKey = captivePortalKey;
       checkbox.dataset.authUrl = captivePortal.auth.url;
-      if (userCaptivePortals[captivePortalKey]) {
-        checkbox.checked = userCaptivePortals[captivePortalKey][checkbox.name];
-      }
+      if (userCaptivePortals[captivePortalKey] &&
+          userCaptivePortals[captivePortalKey][checkbox.name]) {
+        chrome.permissions.contains({origins: [captivePortal.auth.url]}, function(result) {
+          this.checked = result;
+        }.bind(checkbox));
+      };
       checkbox.addEventListener('click', toggleCaptivePortal);
       row.appendChild(checkbox); 
       

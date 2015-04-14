@@ -7,9 +7,6 @@ function setupNetworkFilter() {
     chrome.networking.config.setNetworkFilter(filter, function() {
       if (!chrome.runtime.lastError) {
         console.debug('setNetworkFilter', filter);
-      } else {
-        // TODO: Show notification error.
-        console.error(chrome.runtime.lastError);
       }
     });
   });
@@ -40,15 +37,13 @@ function authenticate(networkInfo, userData) {
       if ((xhr.status !== 200) ||
           (xhr.responseText.indexOf(captivePortal.auth.error) > 0)) {
         chrome.networking.config.finishAuthentication(networkInfo.GUID, 'rejected', function() {
-          console.debug('finishAuthentication', 'rejected');
+          showModalNotification('Authentication error');
         });
-        //TODO: SHow notification error.
-        return;
+      } else {
+        chrome.networking.config.finishAuthentication(networkInfo.GUID, 'succeeded', function() {
+          showModalNotification('Authentication successful', 'You are now connected to ' + networkInfo.SSID);
+        });
       }
-      chrome.networking.config.finishAuthentication(networkInfo.GUID, 'succeeded', function() {
-        console.debug('finishAuthentication', 'succeeded');
-        console.log(chrome.runtime.lastError);
-      });
     };
     xhr.send(formData);
     

@@ -1,5 +1,21 @@
 var ACTIVE_KEY = '__active';
 
+function showModalNotification(title, message) {
+  var options = {
+    type: 'basic',
+    title: title,
+    message: message,
+    iconUrl: chrome.runtime.getURL('images/icon128.png')
+  }
+  chrome.notifications.clear('id', function(wasCleared) {
+    if (wasCleared) {
+      chrome.notifications.update('id', options);
+    } else {
+      chrome.notifications.create('id', options);
+    }
+  });
+}
+
 function getUserCaptivePortals(callback) {
   chrome.storage.sync.get('captivePortals', function(data) {
     callback(data.captivePortals || {});

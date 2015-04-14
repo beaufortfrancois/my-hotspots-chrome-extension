@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "My Hotspots",
-  "description": "Save all your hotspots credentials to make your life easier.",
+  "description": "Connect easily to your favorite hotspots.",
   "version": "0.0.1",
   "minimum_chrome_version": "43",
 
