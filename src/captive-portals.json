@@ -1,69 +1,61 @@
 {
   "FreeWifi": {
-    "auth": {
-      "url": "https://wifi.free.fr/Auth",
-      "formData": {
-        "login": {
-        },
-        "password": {
-          "type": "password"
-        }
+    "url": "https://wifi.free.fr/Auth",
+    "formData": {
+      "login": {
       },
-      "error": "<h2>ERREUR </h2>"
-    }
+      "password": {
+        "type": "password"
+      }
+    },
+    "error": "<h2>ERREUR </h2>"
   },
   "Bouygues Telecom Wi-Fi": {
-    "auth": {
-      "url": "https://hotspotwifi.bouyguestelecom.fr/startportal.do",
-      "formData": {
-        "username": {
-        },
-        "password": {
-          "type": "password"
-        },
-        "cgu": {
-          "value": "on"
-        },
-        "accept": {
-          "value": "Connexion"
-        },
-        "CPURL": {
-          "value": "https://www.google.com"
-        }
+    "url": "https://hotspotwifi.bouyguestelecom.fr/startportal.do",
+    "formData": {
+      "username": {
       },
-      "error": "TODO"
-    }
+      "password": {
+        "type": "password"
+      },
+      "cgu": {
+        "value": "on"
+      },
+      "accept": {
+        "value": "Connexion"
+      },
+      "CPURL": {
+        "value": "https://www.google.com"
+      }
+    },
+    "error": "TODO"
   },
   "orange": {
-    "auth": {
-      "url": "https://hautdebitmobile.orange.fr:8443/",
-      "formData": {
-        "username": {
-        },
-        "password": {
-          "type": "password"
-        },
-        "isCgu": {
-          "value": "on"
-        }
+    "url": "https://hautdebitmobile.orange.fr:8443/",
+    "formData": {
+      "username": {
       },
-      "error": "TODO"
-    }
+      "password": {
+        "type": "password"
+      },
+      "isCgu": {
+        "value": "on"
+      }
+    },
+    "error": "TODO"
   },
   "SFR WiFi FON": {
-    "auth": {
-      "url": "https://hotspot.wifi.sfr.fr/nb4_crypt.php",
-      "formData": {
-        "username": {
-        },
-        "password": {
-          "type": "password"
-        },
-        "conditions": {
-          "value": "on"
-        }
+    "url": "https://hotspot.wifi.sfr.fr/nb4_crypt.php",
+    "formData": {
+      "username": {
       },
-      "error": "TODO"
-    }
+      "password": {
+        "type": "password"
+      },
+      "conditions": {
+        "value": "on"
+      }
+    },
+    "error": "TODO"
   }
 }

@@ -28,14 +28,14 @@ function authenticate(networkInfo, userData) {
     var captivePortal = captivePortals[networkInfo.SSID];
       
     var formData = new FormData();
-    for (var data in captivePortal.auth.formData) {
+    for (var data in captivePortal.formData) {
       formData.append(data, userData[data]);
     }
     var xhr = new XMLHttpRequest();
-    xhr.open(captivePortal.auth.method || "POST", captivePortal.auth.url);
+    xhr.open(captivePortal.method || "POST", captivePortal.url);
     xhr.onloadend = function() {
       if ((xhr.status !== 200) ||
-          (xhr.responseText.indexOf(captivePortal.auth.error) > 0)) {
+          (xhr.responseText.indexOf(captivePortal.error) > 0)) {
         chrome.networking.config.finishAuthentication(networkInfo.GUID, 'rejected', function() {
           showModalNotification('Authentication error');
         });

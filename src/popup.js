@@ -16,8 +16,8 @@ xhr.onload = function() {
       row.appendChild(img);
   
       // Add form input fields.
-      for (var formDataKey in captivePortal.auth.formData) {
-        var formData = captivePortal.auth.formData[formDataKey];
+      for (var formDataKey in captivePortal.formData) {
+        var formData = captivePortal.formData[formDataKey];
         if (formData.value) {
           continue;
         }
@@ -38,10 +38,10 @@ xhr.onload = function() {
       checkbox.type = 'checkbox';
       checkbox.name = ACTIVE_KEY;
       checkbox.dataset.captivePortalKey = captivePortalKey;
-      checkbox.dataset.authUrl = captivePortal.auth.url;
+      checkbox.dataset.url = captivePortal.url;
       if (userCaptivePortals[captivePortalKey] &&
           userCaptivePortals[captivePortalKey][checkbox.name]) {
-        chrome.permissions.contains({origins: [captivePortal.auth.url]}, function(result) {
+        chrome.permissions.contains({origins: [captivePortal.url]}, function(result) {
           this.checked = result;
         }.bind(checkbox));
       };
@@ -73,14 +73,14 @@ function saveUserInput(event) {
 function toggleCaptivePortal(event) {
   var input = event.target;
   if (input.checked) { 
-    chrome.permissions.request({origins: [input.dataset.authUrl]}, function(granted) {
+    chrome.permissions.request({origins: [input.dataset.url]}, function(granted) {
       if (!granted) {
         input.checked = false;
       }
       saveUserInput(event);
     });
   } else {
-    chrome.permissions.remove({origins: [input.dataset.authUrl]}, function(removed) {
+    chrome.permissions.remove({origins: [input.dataset.url]}, function(removed) {
       if (!removed) {
         input.checked = true;
       }
