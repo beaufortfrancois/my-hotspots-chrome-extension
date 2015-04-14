@@ -11,7 +11,7 @@
     "error": "<h2>ERREUR </h2>"
   },
   "Bouygues Telecom Wi-Fi": {
-    "url": "https://hotspotwifi.bouyguestelecom.fr/startportal.do",
+    "url": "https://hotspotwifi.bouyguestelecom.fr/bspHome.do?action=doBspHomeVoucherSubmit&flowId=TemplateLogin",
     "formData": {
       "username": {
       },
@@ -30,21 +30,17 @@
     },
     "error": "TODO"
   },
-  "orange": {
-    "url": "https://hautdebitmobile.orange.fr:8443/",
-    "formData": {
-      "username": {
-      },
-      "password": {
-        "type": "password"
-      },
-      "isCgu": {
-        "value": "on"
-      }
-    },
-    "error": "TODO"
-  },
   "SFR WiFi FON": {
+    "urlParams": [
+      "uamip",
+      "uamport",
+      "userurl",
+      "nasid",
+      "mac",
+      "mode",
+      "channel",
+      "challenge"
+    ],
     "url": "https://hotspot.wifi.sfr.fr/nb4_crypt.php",
     "formData": {
       "username": {
@@ -52,10 +48,19 @@
       "password": {
         "type": "password"
       },
+      "connexion": {
+        "value": "CONNEXION"
+      },
+      "accessType": {
+        "value": "neuf"
+      },
+      "lang": {
+        "value": "fr"
+      },
       "conditions": {
         "value": "on"
       }
     },
-    "error": "TODO"
+    "redirectUrlRegex": "window.location = \"([^\"]*)"
   }
 }

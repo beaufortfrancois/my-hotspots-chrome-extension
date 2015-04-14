@@ -19,13 +19,13 @@
   "permissions": [
     "networking.config",
     "notifications",
-    "storage"
+    "storage",
+    "http://www.gstatic.com/generate_204"
   ],
   "optional_permissions": [
-    "https://wifi.free.fr/Auth",
-    "https://hotspotwifi.bouyguestelecom.fr/startportal.do",
-    "https://hautdebitmobile.orange.fr:8443/",
-    "https://hotspot.wifi.sfr.fr/nb4_crypt.php"
+    "https://hotspot.wifi.sfr.fr/",
+    "https://hotspotwifi.bouyguestelecom.fr/",
+    "https://wifi.free.fr/"
   ],
   "background": { "scripts": ["common.js", "background.js"] }
 }

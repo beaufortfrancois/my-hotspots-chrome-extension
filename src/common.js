@@ -1,6 +1,19 @@
 var ACTIVE_KEY = '__active';
 var CAPTIVE_PORTALS_KEY = 'captivePortals';
 
+function extractUrlParams(url) {
+  var f = [];
+  if (url.indexOf('?') <= 0) {
+    return f;
+  }
+  var t = url.substring(url.indexOf('?')+1).split('&');
+  for (var i=0; i<t.length; i++){
+    var x = t[ i ].split('=');
+    f[x[0]]=x[1];
+  }
+  return f;
+}
+
 function showModalNotification(title, message) {
   var options = {
     type: 'basic',
@@ -46,5 +59,8 @@ function getActiveUserCaptivePortals(callback) {
 }
 
 function setUserCaptivePortals(userCaptivePortals) {
-  chrome.storage.sync.set({CAPTIVE_PORTAL_KEYS: userCaptivePortals || {} });
+  var object = {};
+  object[CAPTIVE_PORTALS_KEY] = userCaptivePortals || {};
+  chrome.storage.sync.set(object);
+  console.log(object);
 }
