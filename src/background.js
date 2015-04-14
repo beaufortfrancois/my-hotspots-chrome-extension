@@ -26,7 +26,6 @@ chrome.networking.config.onCaptivePortalDetected.addListener(function(networkInf
 function authenticate(networkInfo, userData) {
   getSystemCaptivePortals(function(captivePortals) {
     var captivePortal = captivePortals[networkInfo.SSID];
-      
     var formData = new FormData();
     for (var data in captivePortal.formData) {
       formData.append(data, userData[data]);
@@ -46,7 +45,6 @@ function authenticate(networkInfo, userData) {
       }
     };
     xhr.send(formData);
-    
   });
 }
 

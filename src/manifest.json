@@ -22,7 +22,10 @@
     "storage"
   ],
   "optional_permissions": [
-    "<all_urls>"
+    "https://wifi.free.fr/Auth",
+    "https://hotspotwifi.bouyguestelecom.fr/startportal.do",
+    "https://hautdebitmobile.orange.fr:8443/",
+    "https://hotspot.wifi.sfr.fr/nb4_crypt.php"
   ],
   "background": { "scripts": ["common.js", "background.js"] }
 }
