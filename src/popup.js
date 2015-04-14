@@ -76,15 +76,17 @@ function toggleCaptivePortal(event) {
     chrome.permissions.request({origins: [input.dataset.url]}, function(granted) {
       if (!granted) {
         input.checked = false;
+      } else {
+        saveUserInput(event);
       }
-      saveUserInput(event);
     });
   } else {
     chrome.permissions.remove({origins: [input.dataset.url]}, function(removed) {
       if (!removed) {
         input.checked = true;
+      } else {
+        saveUserInput(event);
       }
-      saveUserInput(event);
     });
   }
 }
