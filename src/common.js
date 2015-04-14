@@ -4,7 +4,7 @@ function showModalNotification(title, message) {
   var options = {
     type: 'basic',
     title: title,
-    message: message,
+    message: message || '',
     iconUrl: chrome.runtime.getURL('images/icon128.png')
   }
   chrome.notifications.clear('id', function(wasCleared) {

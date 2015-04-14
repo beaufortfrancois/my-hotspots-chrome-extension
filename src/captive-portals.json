@@ -14,7 +14,7 @@
   },
   "Bouygues Telecom Wi-Fi": {
     "auth": {
-      "url": "https://hotspotwifi.bouyguestelecom.fr/",
+      "url": "https://hotspotwifi.bouyguestelecom.fr/startportal.do",
       "formData": {
         "username": {
         },
@@ -29,6 +29,38 @@
         },
         "CPURL": {
           "value": "https://www.google.com"
+        }
+      },
+      "error": "TODO"
+    }
+  },
+  "orange": {
+    "auth": {
+      "url": "https://hautdebitmobile.orange.fr:8443/",
+      "formData": {
+        "username": {
+        },
+        "password": {
+          "type": "password"
+        },
+        "isCgu": {
+          "value": "on"
+        }
+      },
+      "error": "TODO"
+    }
+  },
+  "SFR WiFi FON": {
+    "auth": {
+      "url": "https://hotspot.wifi.sfr.fr/nb4_crypt.php",
+      "formData": {
+        "username": {
+        },
+        "password": {
+          "type": "password"
+        },
+        "conditions": {
+          "value": "on"
         }
       },
       "error": "TODO"
