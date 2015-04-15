@@ -19,55 +19,49 @@ Get it on the Chrome Web Store at https://chrome.google.com/webstore/detail/TODO
 #### Requires some user fields
 ```javascript
 "My Captive Portal SSID": {
-    "url": "https://my-captive-portal.com",
-    "formData": {
-      "login": {
-      },
-      "password": {
-        "type": "password" // Will be masked in the UI
-      }
+  "url": "https://my-captive-portal.com",
+  "formData": {
+    "login": {
+    },
+    "password": {
+      "type": "password" // Will be masked in the UI
     }
   }
+}
 ```
 
 #### Requires some hardcoded user fields
 ```javascript
 "My Captive Portal SSID": {
-    "url": "https://my-captive-portal.com",
-    "formData": {
-      "cgu": {
-        "value": "on" // Will POST cgu=on to https://my-captive-portal.com
-      }
+  "url": "https://my-captive-portal.com",
+  "formData": {
+    "cgu": {
+      "value": "on" // Will POST cgu=on to https://my-captive-portal.com
     }
   }
+}
 ```
 
 #### Checks for errors contained in the HTTP response
 ```javascript
 "My Captive Portal SSID": {
-    "url": "https://my-captive-portal.com",
-    "formData": {
-    },
-    "error": "ARGH SORRY" // Raises error if this string is found.
-  }
+  "url": "https://my-captive-portal.com",
+  "error": "ARGH SORRY" // Raises error if this string is found.
+}
 ```
 
 #### Gather url parameters contained in the Captive Portal URL
 ```javascript
 "My Captive Portal SSID": {
-    "url": "https://my-captive-portal.com",
-    "urlParams": [ "macAddress", "ipAddress", "token" ], // Will be included in formData.
-    "formData": {
-    }
-  }
+  "url": "https://my-captive-portal.com",
+  "urlParams": [ "macAddress", "ipAddress", "token" ], // Will be included in formData.
+}
 ```
 
 #### Redirect to a final URL contained in HTTP response after authentication
 ```javascript
 "My Captive Portal SSID": {
-    "url": "https://my-captive-portal.com",
-    "redirectUrlRegex": "window.location = \"([^\"]*)", // RegEx capture here.
-    "formData": {
-    }
-  }
+  "url": "https://my-captive-portal.com",
+  "redirectUrlRegex": "window.location = \"([^\"]*)", // RegEx capture here.
+}
 ```
