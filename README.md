@@ -11,12 +11,10 @@ Get it on the Chrome Web Store at https://chrome.google.com/webstore/detail/TODO
 
 <img src="https://raw.githubusercontent.com/beaufortfrancois/my-hotspots-chrome-extension/master/screenshot.png">
 
-## How to add a new captive portal
+## How to add a new captive portal in 2 steps
 
-First, thank you for thinking about it ;)
-Then, here's what you need to contribute:
-- Add a 48px tall image named `captive-portal-ssid.png` to [src/images/portals/](https://github.com/beaufortfrancois/my-hotspots-chrome-extension/blob/master/src/images/portals)
-- Add a new captive portal to [src/captive-portals.json](https://github.com/beaufortfrancois/my-hotspots-chrome-extension/blob/master/src/captive-portals.json) which follow these guidelines below:
+1. Add a 48px tall image named `captive-portal-ssid.png` to [src/images/portals/](https://github.com/beaufortfrancois/my-hotspots-chrome-extension/blob/master/src/images/portals)
+2. Add a new captive portal config to [src/captive-portals.json](https://github.com/beaufortfrancois/my-hotspots-chrome-extension/blob/master/src/captive-portals.json) which follow these guidelines below:
 
 #### Requires some user fields
 ```javascript
